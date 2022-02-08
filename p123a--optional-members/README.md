@@ -2,11 +2,14 @@
 
 
 
-code with error:
+
+### code with error:
 
 <img src="./imgs/2-optional-props--improved.png" align=left />
+<img width="100%"/>
 
-Improve code:
+
+### Improved code:
 
 ```typescript
 namespace optional_properties_improved {
