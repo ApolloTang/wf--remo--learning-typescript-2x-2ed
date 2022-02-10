@@ -5,7 +5,8 @@
 
 ### code with error:
 
-<img src="./imgs/2-optional-props--improved.png" align=left />
+<img src="./imgs/2-optional-props--improved.png" align=left width="750px" />
+
 <img width="100%"/>
 
 
