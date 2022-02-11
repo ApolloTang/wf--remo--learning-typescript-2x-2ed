@@ -11,12 +11,10 @@ You can use the **non-null assertion operator** [reference](https://stackoverflo
 It is very common to encounter above type error when we define a class without a constructor, so we use non-null assertion operator
 
 <img src="imgs/2-class-with-no-constructor.png" align="left"/>
+<img src="imgs/2-class-with-no-constructor.png" width="10000px" height="0"/>
 
-<img src=""  width="100%"/>
 
 ## Another usage of non-null assertion operator
-
-
 
 ```typescript
 class Vector {
