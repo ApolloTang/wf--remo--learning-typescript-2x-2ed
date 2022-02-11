@@ -1,18 +1,3 @@
-# Optional members
-
-
-
-
-### code with error:
-
-<img src="./imgs/2-optional-props--improved.png" align=left width="700px" />
-
-<img width="100%"/>
-
-
-### Improved code:
-
-```typescript
 namespace optional_properties_improved {
 
     class Vector {
@@ -20,7 +5,7 @@ namespace optional_properties_improved {
         public constructor(
             public x: number,
             public y: number,
-            public z?: number  // <--- optional
+            public z?: number   // <--- optional
         ) {}
 
         public is3D() {
@@ -54,19 +39,3 @@ namespace optional_properties_improved {
     console.log('vector3D length: ', vector3D.getLength())
 
 }
-```
-
-
-
-Results
-
-```
-$ ts-node 2-optional-props.ts
-vector2D is2D:  true
-vector2D is3D:  false
-vector2D length:  1.4142135623730951
-vector3D is2D:  false
-vector3D is3D:  true
-vector3D length:  1.4142135623730951
-```
-
