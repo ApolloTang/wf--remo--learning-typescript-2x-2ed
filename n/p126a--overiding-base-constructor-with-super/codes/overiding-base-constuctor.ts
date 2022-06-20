@@ -6,36 +6,34 @@ class Person {
   ) { }
 
   public greet() {
-    console.log("I am a person");
+    return "I am a person";
   }
 }
 
 class Teacher extends Person {
-  public constructor (
-    name: string,
-    surname: string,
-    email: string,
-    public subjects: string[]
+  public constructor (   // <--- now teacher has its own construction
+    public name: string,
+    public surname: string,
+    public email: string,
+    public subjects: string[]  // <--- extra signature
   ) {
-    super(name, surname, email)   // super is required to overide base constuctor
+    super(name, surname, email)   // <--- Here we call super
   }
 
-  public greet() { // <----- over riding parent
-    super.greet()  // <----- you can call base's method with super
-    console.log("I am a teaher");
+  public greet() {  // <--- over riding parent
+    return "I am a teaher";
   }
 
   public teach() {
-    console.log("I teach " + this.subjects.join(' '));
+    return "I teach " + this.subjects.join(' ');
   }
 }
 
 const person = new Person( "foo", "bar", "bar@gmail.com")
-const teacher = new Teacher( "Remo", "Jansen", "foo@gmail.com", ['math', 'sience'])
-
-
 console.log(person.greet())  // I am a person
-console.log(teacher.greet()) // I am a person
-                             // I am a teaher
 
+const teacher = new Teacher( "Remo", "Jansen", "foo@gmail.com", ['math', 'sience'])
+//                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//                                             teacher's constructor has different signature
+console.log(teacher.greet()) // I am a teacher
 console.log(teacher.teach()) // I teach math sience
