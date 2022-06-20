@@ -11,11 +11,6 @@ interface Validatable {
 
 
 ```typescript
-interface Validatable {
-  validate(): void;
-}
-
-
 // first-in-first-out (FIFO) data structure.
 class Queue<T extends Validatable> {
   private _items:T[] = []
