@@ -6,29 +6,29 @@ class Person {
   ) { }
 
   public greet() {
-    console.log("I am a person");
+    return "I am a person";
   }
 }
 
 class Teacher extends Person {
   public greet() { // <----- over riding parent
-    console.log("I am a teaher");
+    return "I am a teaher";
   }
 
   public teach() {
-    console.log("I teach");
+    return "I teach";
   }
 }
 
 const person = new Person( "foo", "bar", "bar@gmail.com")
 const teacher = new Teacher( "Remo", "Jansen", "foo@gmail.com")
 
+console.log(teacher.greet()) // I am a teaher
+console.log(teacher.teach()) // I teach
 
 console.log(person.greet())  // I am a person
-console.log(teacher.greet()) // I am a teaher
 
-console.log(teacher.teach()) // I teach
-// console.log(person.teach())  // Error
+// console.log(person.teach())  // Error <-- person Person does noe has "teach" method
 
 
 
