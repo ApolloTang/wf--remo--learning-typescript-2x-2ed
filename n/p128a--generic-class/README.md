@@ -1,4 +1,4 @@
-# Overiding base's constructor
+# Generic classes
 
 
 
@@ -11,7 +11,7 @@ class Queue<T> {
   }
   public pop() {
     // array shift method removes the first element from an array
-    // (from the left) // and returns that removed element.
+    // (from the left) and returns that removed element.
     return this._items.shift()
   }
 }
