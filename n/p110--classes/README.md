@@ -4,7 +4,7 @@ p110
 
 
 
-Class has are made up of *member*.
+Class are made up of *member*.
 
 There are two kinds of members: *properties* and *methods*.
 

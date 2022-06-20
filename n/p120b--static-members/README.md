@@ -22,6 +22,8 @@ Note that we simply invoke the static methods, no need to creat an instance.
 
 
 
+## Factory pattern: using static member to instantiate 
+
 Another example:
 
 ```typescript

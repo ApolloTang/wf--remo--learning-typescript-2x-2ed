@@ -2,9 +2,9 @@
 
 
 
-<img src="./imgs/read-on ly-props.png" align=left width="1100px" />
+<img src="./imgs/read-only-props.png" align=left width="1500px" />
 
-<img width="100%"/>
+
 
 
 

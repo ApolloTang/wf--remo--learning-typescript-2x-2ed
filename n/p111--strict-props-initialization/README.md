@@ -2,7 +2,7 @@
 
 p111
 
-When `strict` is `false`  you can skip initializing al property:
+When `strict` is `false`  you can skip initializing a property:
 
 <img src="imgs/1-strict-false.png" />
 

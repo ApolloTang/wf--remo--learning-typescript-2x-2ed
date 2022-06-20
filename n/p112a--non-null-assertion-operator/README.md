@@ -1,6 +1,6 @@
 # Non-null assertion operator
 
-You can use the **non-null assertion operator** [reference](https://stackoverflow.com/questions/42273853/in-typescript-what-is-the-exclamation-mark-bang-operator-when-dereferenci) to tell to temporarily relax the "not null" constraint that it might otherwise demand. 
+You can use the **non-null assertion operator** [reference](https://stackoverflow.com/questions/42273853/in-typescript-what-is-the-exclamation-mark-bang-operator-when-dereferenci) to temporarily relax the "not null" constraint that it might otherwise demand. 
 
 <img src="imgs/1-non-null-assertion-operator.png" />
 
@@ -14,7 +14,7 @@ It is very common to encounter above type error when we define a class without a
 <img src="imgs/2-class-with-no-constructor.png" width="10000px" height="0"/>
 
 
-## Another usage of non-null assertion operator
+## Optional member: usage of non-null assertion operator
 
 ```typescript
 class Vector {
@@ -39,7 +39,7 @@ class Vector {
       Math.pow(this.y, 2) +
       // ((this.is3D()) ? ( Math.pow((this.z), 2) ) : 0)
       // ((this.is3D()) ? ( Math.pow((this.z as number), 2) ) : 0)
-      ((this.is3D()) ? ( Math.pow((this.z!), 2) ) : 0)  // <------ (see note)
+      ((this.is3D()) ? ( Math.pow((this.z!), 2) ) : 0)  // <------ (see note bellow)
     );
   }
 
@@ -54,13 +54,13 @@ Note:
 
 <img src="./imgs/3-type-check-is-unable-to-conclude.png" align="left" width="100%" />
 
-In the above we assert that this.z to be number because type checker is unable to conclude without running `this.is3D()`. So we have to assert that `this.z` to `number type`:
+In the above `Math.pow` take a number type in it 1st actual-argument, but we are passing in `this.z` that is a sum type of number and undefined. Although the second case of ternary operator will not run unlesss `this.is3D() === true`, typescript can not figure this out unless it execute the code.  To get arround this we can assert that `this.z` to `number type`:
 
 ```typescript
 ((this.is3D()) ? ( Math.pow((this.z as number), 2) ) : 0)
 ```
 
-In the case like this we can use non-null assertion operator:
+Another way to deal with this kind of situation is to use  **non-null assertion operator**:
 
 ```typescript
 ((this.is3D()) ? ( Math.pow((this.z!), 2) ) : 0)
@@ -68,7 +68,7 @@ In the case like this we can use non-null assertion operator:
 
 From: 
 
-> As a motivating example: using the new ES Map type with code like `dict.has(key) ? dict.get(key) : 'default';` the TS compiler can't infer that the `get` call never returns null/undefined. `dict.has(key) ? dict.get(key)! : 'default';` narrows the type correctly. 
+> using the new ES Map type with code like `dict.has(key) ? dict.get(key) : 'default';` the TS compiler can't infer that the `get` call never returns null/undefined. `dict.has(key) ? dict.get(key)! : 'default';` narrows the type correctly. 
 >
 >  [May 30 2018 at 22:58](https://stackoverflow.com/questions/42273853/in-typescript-what-is-the-exclamation-mark-bang-operator-when-dereferenci#comment88238625_42274019)
 

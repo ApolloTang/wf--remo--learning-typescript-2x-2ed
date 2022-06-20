@@ -42,4 +42,4 @@ console.log(schoolPrincipal.manage())
 
 :warning: It is not recommended to have too many levels in the inheritance tree. A class situated too deeply in the inheritance tree will be relatively complex to develop, test, and maintain.
 
-:bulb: We should try to keep the DIT between zero and four because a value greater than four would compromise encapsulation and increase complexity.
+:bulb: We should try to keep the DIT between 0 to 4 because a value greater than 4 would compromise encapsulation and increase complexity.
